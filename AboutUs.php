@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,7 @@
       document.addEventListener("DOMContentLoaded",  () => {
       
         var allSliders = []
-        // Create an ImageSlider object
-        // for all sliders in the page
+      
         document.querySelectorAll('.slider-container').forEach( (slider) => {
       
           allSliders.push(new ImageSlider(slider)) 
@@ -19,36 +19,46 @@
 </head>
 <body>
     <header class="header">
-        <h3 class="logo">About Us<span></span></h3>
+        <h3 class="logo">About Us<span></span></h3> 
         <nav class="navbar">
+          <li class="navlist">
+            
+        </li>
           <ul class="navbar-list">
-            <li><a class="navbar-link" href="Homepage.html">home</a></li>
-            <li><a class="navbar-link" href="AboutUs.html">about</a></li>
-            <li><a class="navbar-link" href="#hero">service</a></li>
-            <li><a class="navbar-link" href="LoginForm.html">Log In</a></li>
+            <li><a class="navbar-link" href="Homepage.php">home</a></li>
+            <li><a class="navbar-link" href="AboutUs.php">about us</a></li>
+            <li><a class="navbar-link" href="PackagesDuo.php">packages</a></li>
+            <?php
+            if (!(isset($_SESSION['user_type']))) {
+                echo "<a class='navbar-link' href='LoginForm.php'>Login</a>";
+            } else if (isset($_SESSION['user_type']) == 'user') {
+                echo "<a class='navbar-link' href='logout.php'>Logout</a>";
+            }
+            ?>
+            <li><a class="navbar-link" id="REGISTER" href="register.php">Register</a></li>
           </ul>
         </nav>
       </header>
       <div>
           <div class="slider-container">
             <div class="arrow left">
-              <img src="../[Homepage]/img/left.png">
+              <img src="./img/left.png">
             </div>
       
             <div class="arrow right">
-              <img src="../[Homepage]/img/right.png">
+              <img src="./img/right.png">
             </div>
       
             <div class="slider-inner">
-              <img src="../[Homepage]/img/swiper.jpg">
-              <img src="../[Homepage]/img/swiper1.jpg">
-              <img src="../[Homepage]/img/swiper2.webp">
-              <img src="../[Homepage]/img/swiper3.webp">
-              <img src="../[Homepage]/img/swiper4.jpg">
-              <img src="../[Homepage]/img/swiper5.jpg">
-              <img src="../[Homepage]/img/swiper6.jpg">
-              <img src="../[Homepage]/img/swiper7.avif">
-              <img src="../[Homepage]/img/swiper8.jpg">
+              <img src="./img/swiper.jpg">
+              <img src="./img/swiper1.jpg">
+              <img src="./img/swiper2.webp">
+              <img src="./img/swiper3.webp">
+              <img src="./img/swiper4.jpg">
+              <img src="./img/swiper5.jpg">
+              <img src="./img/swiper6.jpg">
+              <img src="./img/swiper7.jpg">
+              <img src="./img/swiper8.jpg">
 
             </div>
           </div>

@@ -16,12 +16,18 @@
       <div class="form-inner">
           <h2>SIGN IN</h2>
           <div class="content">
+            <?php
+                include 'configRegister.php';
+                $logini = new DatabaseRegister();
+                $check = $logini->check();
+               
+            ?> 
               <input type="email" id="emaili" placeholder="User Name">
               <input type="password" id="passi" placeholder="Password">
               <button type="submit" onclick="login()" class="brn">LOGIN</button>
              <div class="chicken">
              <a href="">Forgot Password?</a> &ensp;
-             <a href="register.html">Sign Up</a>
+             <a href="register.php">Sign Up</a>
             </div>
           </div>
       </div>

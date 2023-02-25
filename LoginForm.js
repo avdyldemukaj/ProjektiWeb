@@ -1,20 +1,29 @@
-
-
 function login(){
-    var emaili=document.getElementById("emaili").value;
-    var passi=document.getElementById("passi").value;
+    var email = document.forms["myForm"]["email"].value;    
 
-    if(emaili=="" && passi==""){
-        alert("No email or password")
-    }
-    else if(emaili==""){
-        alert("Please enter a valid email address")
-    }
-    else if(passi==""){
-        alert("Please enter a valid password")
-    }
-    else{
-        confirm("Logged in succesfully")
-    }
+    var password = document.forms["myForm"]["password"].value;   
+
+    var emailRegex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+
+    var passwordRegex=/^[A-Z]{1}[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{6}$/;
+
+
+   
+   if(!(emailRegex.test(email))) {
+    document.getElementById('erroremail').innerHTML="Please enter a valid email address"; 
+   return false;
+   }
+   else{
+    document.getElementById('erroremail').innerHTML=""; 
+   }
+   if(!(passwordRegex.test(password))){
+    document.getElementById('errorpassword').innerHTML="Please enter a valid password";
+    return false;
+   }
+   else{
+    document.getElementById('errorpassword').innerHTML="";
+   
+   }
 
   }

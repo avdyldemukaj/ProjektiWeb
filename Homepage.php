@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,9 +11,16 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li><a class="navbar-link" href="#hero">home</a></li>
-          <li><a class="navbar-link" href="AboutUs.html">about</a></li>
-          <li><a class="navbar-link" href="Homepage.html">service</a></li>
-          <li><a class="navbar-link" href="LoginForm.html">Log In</a></li>
+          <li><a class="navbar-link" href="AboutUs.php">about us</a></li>
+          <li><a class="navbar-link" href="Packages.php">packages</a></li>
+          <?php
+            if (!(isset($_SESSION['user_type']))) {
+                echo "<a class='navbar-link' href='LoginForm.php'>Login</a>";
+            } else if (isset($_SESSION['user_type']) == 'user') {
+                echo "<a class='navbar-link'  href='logout.php'>Logout</a>";
+            }
+            ?>
+          <li><a class="navbar-link" id="REGISTER" href="register.php">Register</a></li>
         </ul>
       </nav>
     </header>
@@ -23,19 +31,19 @@
           <input type="radio" name="radio-btn" id="radio3">
           <input type="radio" name="radio-btn" id="radio4">
           <div class="slide first">
-              <img src="../projektiMaIForti/img/BALI.jpg" alt="img">
+              <img src="./img/BALI.jpg" alt="img">
           </div>
 
           <div class="slide" id="thailand">
-              <img src="../projektiMaIForti/img/bali1.jpg" alt="img">
+              <img src="./img/bali1.jpg" alt="img">
           </div>
 
           <div class="slide">
-              <img src="../projektiMaIForti/img/bali2.jpg" alt="img">
+              <img src="./img/bali2.jpg" alt="img">
           </div>
 
           <div class="slide">
-              <img src="../projektiMaIForti/img/bali3.webp" alt="img">
+              <img src="./img/bali3.webp" alt="img">
           </div>
           <div class="navigation-auto">
               <div class="auto-btn1"></div>

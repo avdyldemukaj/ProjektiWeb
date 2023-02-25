@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
     
@@ -14,6 +14,12 @@
         
             
         <div class="formStyle">
+            <?php
+            include 'configRegister.php';
+            $registeri = new DatabaseRegister();
+            $insert = $registeri->insert();
+
+            ?>
             <p id="registerForm">Register</p>
             <form action="./LoginForm.html" name="myForm" onsubmit="return validateFormRegister()" >               
             <label for="name" class="arrangeLabel" id="pak1">Name: </label><br>
@@ -40,6 +46,6 @@
     </main>
 
 
-    <script src="./register.js"></script>
+    <script src="register.js"></script>
 </body>
 </html>
