@@ -14,12 +14,12 @@
     <h1>Users</h1>
     <?php
               include 'configPackagesIndividual.php';
-              $money = new DatabasePackagesIndividual();
+              $book = new DatabasePackagesIndividual();
               $id = $_REQUEST['id'];
-              $row = $money->edit($id);
+              $row = $book->edit($id);
  
               if (isset($_POST['update'])) {
-                if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email'])  && isset($_POST['phoneNumber']) && isset($_POST['address']) && isset($_POST['money'])) {
+                if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email'])  && isset($_POST['phoneNumber']) && isset($_POST['address']) && isset($_POST['book'])) {
                      
                     $data['id'] = $id;
                     $data['name'] = $_POST['name'];
@@ -27,15 +27,15 @@
                     $data['email'] = $_POST['email'];
                     $data['number'] = $_POST['phoneNumber'];
                     $data['address'] = $_POST['address'];
-                    $data['money'] = $_POST['money'];
+                    $data['book'] = $_POST['book'];
  
                     $update = $money->update($data);
  
                     if($update){
-                      echo "<script>alert('The Donation has been updated!');</script>";
+                      echo "<script>alert('The book has been updated!');</script>";
                       echo "<script>window.location.href = 'IndividualDashboard.php';</script>";
                     }else{
-                      echo "<script>alert('The Donation FAILED to update try again!');</script>";
+                      echo "<script>alert('The book FAILED to update try again!');</script>";
                       echo "<script>window.location.href = 'IndividualDashboard.php';</script>";
                     }
  
@@ -61,8 +61,8 @@
       <label for="address">Address</label>
       <input type="text" id="address" value="<?php echo $row['address']; ?>" name="address" required>
 
-      <label for="money">Money(€)</label>
-      <input type="number" id="money" value="<?php echo $row['money']; ?>" name="money" required><br><br>
+      <label for="book">Date</label>
+      <input type="date" id="book" value="<?php echo $row['book']; ?>" name="book" required><br><br>
     
 
       <button type="submit" name="update">Edit Contact</button>

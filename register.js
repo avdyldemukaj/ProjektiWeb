@@ -32,7 +32,7 @@ function validateFormRegister(){
         document.getElementById('erroremail').innerHTML=""; 
        }
        if(!(passwordRegex.test(password))){
-        document.getElementById('errorpassword').innerHTML="Please enter a valid password(ex:Test13%)";
+        document.getElementById('errorpassword').innerHTML="Please enter a valid password";
         return false;
        }
        else{

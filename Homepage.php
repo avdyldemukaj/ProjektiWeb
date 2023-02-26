@@ -12,11 +12,12 @@
         <ul class="navbar-list">
           <li><a class="navbar-link" href="#hero">home</a></li>
           <li><a class="navbar-link" href="AboutUs.php">about us</a></li>
+          <li><a class="navbar-link" href="contact.php">promotion</a></li>
           <li><a class="navbar-link" href="Packages.php">packages</a></li>
           <?php
-            if (!(isset($_SESSION['user_type']))) {
+            if (!(isset($_SESSION['role']))) {
                 echo "<a class='navbar-link' href='LoginForm.php'>Login</a>";
-            } else if (isset($_SESSION['user_type']) == 'user') {
+            } else if (isset($_SESSION['role']) == 'user') {
                 echo "<a class='navbar-link'  href='logout.php'>Logout</a>";
             }
             ?>

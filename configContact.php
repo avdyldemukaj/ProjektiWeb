@@ -1,5 +1,5 @@
 <?php
-class DatabasePackagesFamily{
+class DatabaseDonateContact{
     private $server = 'localhost';
     private $username = 'root';
     private $password;
@@ -19,17 +19,16 @@ public function insert(){
     if(isset($_POST['submit'])){
 
         $name = $_POST['name'];
-        $surname = $_POST['surname'];
         $email = $_POST['email']; 
-        $number = $_POST['number'];
-        $adress = $_POST['adress'];
-        $book = $_POST['book'];
+        $message = $_POST['message'];
+        $image = $_POST['image'];
+        
        
 
-        $query = "INSERT INTO packages_family(name, surname, email, phoneNumber, address, book) VALUES ('$name', '$surname','$email', '$number', '$adress', '$book')";
+        $query = "INSERT INTO contact(name, email, message,image) VALUES ('$name', '$email', '$message','$image')";
         if ($sql = $this->conn->query($query)) {
 
-            echo "<script>alert('Thank you for your booking.');</script>";
+            echo "<script>alert('Thank you for contacting us. We will inform you ASAP!');</script>";
             echo "<script>window.location.href = 'Homepage.php';</script>";
         }
 
@@ -58,7 +57,7 @@ public function check(){
      
            if($row['email'] == $email){
             
-            echo "<script>alert('Thank you for your booking.');</script>";
+            echo "<script>alert('Thank you for contacting us. We will inform you ASAP!');</script>";
             echo "<script>window.location.href = 'Homepage.php';</script>";
             $this->insert();
            }
@@ -90,8 +89,8 @@ public function check(){
      
            if($row['email'] == $email){
             
-            echo "<script>alert('Thank you for your booking.');</script>";
-            echo "<script>window.location.href = 'FamilyDashboard.php';</script>";
+            echo "<script>alert('Contact Form has been updated successfully!!');</script>";
+            echo "<script>window.location.href = 'contactDashboard.php';</script>";
             $this->insert();
            }
           
@@ -106,7 +105,7 @@ public function check(){
 
  public function fetch(){
     $data = null;
-    $query = "SELECT * FROM packages_family";
+    $query = "SELECT * FROM contact";
     if ($sql = $this->conn->query($query)) {
         while ($row = mysqli_fetch_assoc($sql)) {
             $data[] = $row;
@@ -119,7 +118,7 @@ public function check(){
 
 public function delete($id){
 
-    $query = "DELETE FROM packages_family where id = '$id'";
+    $query = "DELETE FROM contact where id = '$id'";
     if ($sql = $this->conn->query($query)) {
         return true;
     }else{
@@ -131,7 +130,7 @@ public function edit($id){
 
     $data = null;
 
-    $query = "SELECT * FROM packages_family WHERE id = '$id'";
+    $query = "SELECT * FROM contact WHERE id = '$id'";
     if ($sql = $this->conn->query($query)) {
         while($row = $sql->fetch_assoc()){
             $data = $row;
@@ -142,7 +141,7 @@ public function edit($id){
 
 public function update($data){
     
-    $query = "UPDATE packages_family SET name='$data[name]', surname='$data[surname]', email='$data[email]', phoneNumber='$data[number]', address='$data[address]', book='$data[book]'  WHERE id='$data[id] '";
+    $query = "UPDATE contact SET name='$data[name]',  email='$data[email]',  message='$data[message]',images='$data[image]' WHERE id='$data[id] '";
 
     if ($sql = $this->conn->query($query)) {
         return true;

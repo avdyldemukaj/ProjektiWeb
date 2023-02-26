@@ -5,7 +5,7 @@ class DatabaseRegister
     public $server = 'localhost';
     public $username = 'root';
     public $password;
-    public $database = 'ofertat';
+    public $database = 'bali';
     public $conn;
 
     public function __construct()
@@ -44,20 +44,19 @@ class DatabaseRegister
             $surname = $_POST['surname'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            //$user_type = $_POST['user_type'];
 
             if ($this->emailExists()) {
                 echo "<script>alert('A user with this email already exists!')</script>";
                 echo "<script>window.location.href = 'register.php';</script>";
                 return;
             } else {
-                $query = "INSERT INTO register(name, surname, email, password, user_type) VALUES ('$name', '$surname','$email', '$password', 'user')";
+                $query = "INSERT INTO register(name, surname, email, password, role) VALUES ('$name', '$surname','$email', '$password', 'user')";
                 if ($sql = $this->conn->query($query)) {
                     echo "<script>alert('You have been registered successfully!!');</script>";
-                    echo "<script>window.location.href = 'login.php';</script>";
+                    echo "<script>window.location.href = 'LoginForm.php';</script>";
                 } else {
                     echo "<script>alert('The user already exists!');</script>";
-                    echo "<script>window.location.href = 'index.php';</script>";
+                    echo "<script>window.location.href = 'Homepage.php';</script>";
                 }
             }
         }
@@ -71,20 +70,20 @@ class DatabaseRegister
             $surname = $_POST['surname'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $user_type = $_POST['user_type'];
+            $role = $_POST['role'];
 
             if ($this->emailExists()) {
                 echo "<script>alert('A user with this email already exists!')</script>";
-                echo "<script>window.location.href = 'userAdd.php';</script>";
+                echo "<script>window.location.href = 'UserAdd.php';</script>";
                 return;
             } else {
-                $query = "INSERT INTO register(name, surname, email, password, user_type) VALUES ('$name', '$surname','$email', '$password', '$user_type')";
+                $query = "INSERT INTO register(name, surname, email, password, role) VALUES ('$name', '$surname','$email', '$password', '$role')";
                 if ($sql = $this->conn->query($query)) {
                     echo "<script>alert('You have been registered successfully!!');</script>";
-                    echo "<script>window.location.href = 'userDashboard.php';</script>";
+                    echo "<script>window.location.href = 'UserDashboard.php';</script>";
                 } else {
                     echo "<script>alert('The user already exists!');</script>";
-                    echo "<script>window.location.href = 'userDashboard.php';</script>";
+                    echo "<script>window.location.href = 'UserDashboard.php';</script>";
                 }
             }
         }
@@ -110,7 +109,7 @@ class DatabaseRegister
 
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $user_type = $_POST['user_type'];
+            $role = $_POST['role'];
 
             $select = "SELECT * FROM register WHERE email = '$email' && password = '$password' ";
 
@@ -120,23 +119,23 @@ class DatabaseRegister
 
                 $row = mysqli_fetch_array($result);
 
-                if ($row['user_type'] == 'admin') {
+                if ($row['role'] == 'admin') {
 
-                    $_SESSION['user_type'] = 'admin';
+                    $_SESSION['role'] = 'admin';
                     echo "<script>alert('You have logged in successfuly!!');</script>";
-                    echo "<script>window.location.href = './Dashboards/dashboard.php';</script>";
+                    echo "<script>window.location.href = 'dashboard.php';</script>";
                 } 
-                else if ($row['user_type'] == 'user') {
+                else if ($row['role'] == 'user') {
 
-                    $_SESSION['user_type'] = 'user';
+                    $_SESSION['role'] = 'user';
                     echo "<script>alert('You have been logged in successfuly!!');</script>";
-                    echo "<script>window.location.href = 'index.php';</script>";
+                    echo "<script>window.location.href = 'Homepage.php';</script>";
 
                 }
 
             } else {
                 echo "<script>alert('The email or password is invalid!');</script>";
-                echo "<script>window.location.href = 'login.php';</script>";
+                echo "<script>window.location.href = 'LoginForm.php';</script>";
             }
 
         }
@@ -172,7 +171,7 @@ class DatabaseRegister
     public function update($data)
     {
 
-        $query = "UPDATE register SET name='$data[name]', surname='$data[surname]', email='$data[email]', password='$data[password]', user_type='$data[user_type]' WHERE id='$data[id] '";
+        $query = "UPDATE register SET name='$data[name]', surname='$data[surname]', email='$data[email]', password='$data[password]', role='$data[role]' WHERE id='$data[id] '";
 
         if ($sql = $this->conn->query($query)) {
             return true;

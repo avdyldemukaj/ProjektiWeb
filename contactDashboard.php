@@ -11,30 +11,26 @@
     <a class="navbar-brand" href="dashboard.php">Dashboard</a>
   </nav>
   <div class="container">
-    <h1>Duo Packages</h1>
+    <h1>Users</h1>
     
-     <a href="DuoAdd.php">  <button type="submit" name="submit" id="userAdd">Add Book</button><br> <br> </a> 
     
     <table>
       <thead>
         <tr>
            <th>ID</th>
           <th>Name</th>
-          <th>Surname</th>
           <th>Email</th>
-          <th>Phone Number</th>
-          <th>Address</th>
-          <th>Date</th>
+          <th>Message</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
       <?php
  
-        include 'confingPackagesDuo.php';
-        $book = new DatabasePackagesDuo();
-        $rows = $book->fetch();
-      
+        include 'configContact.php';
+        $contact = new DatabaseDonateContact();
+        $rows = $contact->fetch();
+        
         if(!empty($rows)){
         foreach($rows as $row){ 
        ?>
@@ -42,14 +38,13 @@
                 
                 <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row['name']; ?></td>
-                <td><?php echo $row['surname']; ?></td>
                 <td><?php echo $row['email']; ?></td>
-                <td><?php echo $row['phoneNumber']; ?></td>
-                <td><?php echo $row['address']; ?></td>
-                <td><?php echo $row['book']; ?></td>
+                <td><?php echo $row['message']; ?></td>
+                <td><?php echo $row['image']; ?></td>
+                <td><img src="../imgs/<?php echo $row['image']; ?>" width="300px" height="200px"></td>
                 <td>
-                  <a href="DuoDelete.php?id=<?php echo $row['id']; ?>" class="btn btn1">Delete</a>
-                  <a href="DuoEdit.php?id=<?php echo $row['id']; ?>" class="btn btn2">Edit</a>
+                  <a href="contactDelete.php?id=<?php echo $row['id']; ?>" class="btn btn1">Delete</a>
+                  <a href="contactEdit.php?id=<?php echo $row['id']; ?>" class="btn btn2">Edit</a>
                   
                 </td>
               </tr>

@@ -34,13 +34,13 @@
       <label for="adress">Address</label>
       <input type="text" id="adress" name="adress" required>
 
-      <label for="money">Money(€)</label>
-      <input type="number" id="money" name="money" required><br><br>
+      <label for="book">Date</label>
+      <input type="date" id="book" name="book" required><br><br>
       
            
     
 
-      <button type="submit" name="submit">Add Donation</button>
+      <button type="submit" name="submit">Add Book</button>
     </form>
     
   </div>

@@ -5,7 +5,7 @@ function validatePackagesIndividual() {
     var email = document.forms["myForm"]["email"];   
     var number = document.forms["myForm"]["number"];
     var adress = document.forms["myForm"]["adress"]; 
-    var money = document.forms["myForm"]["money"]; 
+    var book = document.forms["myForm"]["book"]; 
     
     if (name.value == "")                                  
         { 
@@ -47,9 +47,9 @@ function validatePackagesIndividual() {
             document.getElementById('erroradress').innerHTML="";  
         }
     
-        if (money.value == "")                                   
+        if (book.value == "")                                   
         { 
-            document.getElementById('errortext').innerHTML="Please write some valid  clothes!"; 
+            document.getElementById('errortext').innerHTML="Please write some valid date!"; 
             return false; 
         }else{
             document.getElementById('errortext').innerHTML="";   

@@ -1,11 +1,11 @@
 <?php 
     include 'configPackagesFamily.php';
-    $money = new DatabasePackagesFamily();
+    $book = new DatabasePackagesFamily();
     $id = $_REQUEST['id'];
-    $delete = $money->delete($id);
+    $delete = $book->delete($id);
  
     if ($delete) {
-        echo "<script>alert('Donation has been deleted successfully!');</script>";
+        echo "<script>alert('Book has been deleted successfully!');</script>";
         echo "<script>window.location.href = 'FamilyDashboard.php';</script>";
     }
  ?>

@@ -22,10 +22,12 @@
                 $check = $logini->check();
                
             ?> 
+              <form action="" name="myForm"  method="post" onsubmit="return login()">
               <input type="email" id="emaili" placeholder="User Name">
               <input type="password" id="passi" placeholder="Password">
-              <button type="submit" onclick="login()" class="brn">LOGIN</button>
-             <div class="chicken">
+              <!-- <button type="submit" onclick="login()" class="brn" href="Homepage.php">LOGIN</button> -->
+              <input type="submit" name="submit" value="Login" id="dnButt"><br>
+              <div class="chicken">
              <a href="">Forgot Password?</a> &ensp;
              <a href="register.php">Sign Up</a>
             </div>

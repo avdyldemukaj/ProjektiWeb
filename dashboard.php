@@ -11,28 +11,33 @@
 <body><br>
 	<a href="Homepage.php"><button class="top-left-btn">Log Out</button></a>
     <br><br>
-    <h1>Dashboard</h1>
+    <h1>Welcome Admin</h1>
     <div class="container">
         
 		<div class="card">
 			<h2>Users</h2>
 			<p>Registered Users</p>
-			<a href="userDashboard.php">View Users</a>
+			<a href="UserDashboard.php">View Users</a>
 		</div>
 		<div class="card">
-			<h2>Contact</h2>
-			<p>Number of Contacts</p>
-			<a href="contactDashboard.php">View Contact</a>
+			<h2>Packages</h2>
+			<p>Individual Packages</p>
+			<a href="IndividualDashboard.php">View Individual Packages</a>
 		</div>
 		<div class="card">
-			<h2>Money Donations</h2>
-			<p>User Donations</p>
-			<a href="moneyDashboard.php">View Donations</a>
+			<h2>Packages</h2>
+			<p>Duo Packages</p>
+			<a href="DuoDashboard.php">View Duo Packages</a>
 		</div>
         <div class="card">
-			<h2>Clothes Donations</h2>
-			<p>User Donations</p>
-			<a href="clothesDashboard.php">View Donations</a>
+			<h2>Packages</h2>
+			<p>Family Packages</p>
+			<a href="FamilyDashboard.php">View Family Packages</a>
+		</div>
+		<div class="card">
+			<h2>Contact Us</h2>
+			<p>Contact</p>
+			<a href="contactDashboard.php">View Contact</a>
 		</div>
 	</div>
     

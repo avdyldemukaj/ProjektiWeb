@@ -4,7 +4,7 @@
   <title>Dashboard</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dashboardsStyle/userDashboard.css">
+  <link rel="stylesheet" href="userDashboard.css">
 </head>
 <body>
   <nav class="navbar">
@@ -44,10 +44,10 @@
                 <td><?php echo $row['surname']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['password']; ?></td>
-                <td><?php echo $row['user_type']; ?></td>
+                <td><?php echo $row['role']; ?></td>
                 <td>
-                  <a href="userDelete.php?id=<?php echo $row['id']; ?>" class="btn btn1">Delete</a>
-                  <a href="userEdit.php?id=<?php echo $row['id']; ?>" class="btn btn2">Edit</a>
+                  <a href="UserDelete.php?id=<?php echo $row['id']; ?>" class="btn btn1">Delete</a>
+                  <a href="UserEdit.php?id=<?php echo $row['id']; ?>" class="btn btn2">Edit</a>
                 </td>
               </tr>
               <?php

@@ -6,6 +6,6 @@
  
     if ($delete) {
         echo "<script>alert('The user has been deleted successfully!');</script>";
-        echo "<script>window.location.href = 'userDashboard.php';</script>";
+        echo "<script>window.location.href = 'UserDashboard.php';</script>";
     }
  ?>

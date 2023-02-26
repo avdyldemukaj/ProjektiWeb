@@ -4,7 +4,7 @@
   <title>Dashboard</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dashboardsStyle/userDashboard.css">
+  <link rel="stylesheet" href="userDashboard.css">
 </head>
 <body>
   <nav class="navbar">
@@ -19,28 +19,28 @@
               $row = $DatabaseRegister->edit($id);
  
               if (isset($_POST['update'])) {
-                if (isset($_POST['name']) &&  isset($_POST['surname']) && isset($_POST['email'])  && isset($_POST['password']) && isset($_POST['user_type'])) {
+                if (isset($_POST['name']) &&  isset($_POST['surname']) && isset($_POST['email'])  && isset($_POST['password']) && isset($_POST['role'])) {
                      
                     $data['id'] = $id;
                     $data['name'] = $_POST['name'];
                     $data['surname'] = $_POST['surname'];
                     $data['email'] = $_POST['email'];
                     $data['password'] = $_POST['password'];
-                    $data['user_type'] = $_POST['user_type'];
+                    $data['role'] = $_POST['role'];
  
                     $update = $DatabaseRegister->update($data);
  
                     if($update){
                       echo "<script>alert('User has been updated!');</script>";
-                      echo "<script>window.location.href = 'userDashboard.php';</script>";
+                      echo "<script>window.location.href = 'UserDashboard.php';</script>";
                     }else{
                       echo "<script>alert('Update FAILED try again!');</script>";
-                      echo "<script>window.location.href = 'userDashboard.php';</script>";
+                      echo "<script>window.location.href = 'UserDashboard.php';</script>";
                     }
  
                   }else{
                     echo "<script>alert('Is empty!');</script>";
-                    header("Location: userEdit.php'?id=$id");
+                    header("Location: UserEdit.php'?id=$id");
                   }
                 }
           ?>
@@ -53,7 +53,7 @@
       <input type="email" id="email" value="<?php echo $row['email']; ?>" name="email" required>
       <label for="password">Password</label>
       <input type="password" id="password" value="<?php echo $row['password']; ?>" name="password" required>
-      <select name="user_type" id="selektimi" value="<?php echo $row['user_type']; ?>" required>
+      <select name="role" id="selektimi" value="<?php echo $row['role']; ?>" required>
                     <option value="user" name="user">user</option>
                     <option value="admin" name ="admin">admin</option>
             </select><br><br>

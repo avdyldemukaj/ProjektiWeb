@@ -4,7 +4,7 @@
   <title>Dashboard</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dashboardsStyle/userDashboard.css">
+  <link rel="stylesheet" href="userDashboard.css">
 </head>
 <body>
   <nav class="navbar">
@@ -27,8 +27,8 @@
       <input type="email" id="email" name="email" required>
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required>
-      <label for="user_type">Role:</label>
-      <select name="user_type" id="selektimi" required>
+      <label for="role">Role:</label>
+      <select name="role" id="selektimi" required>
                     <option value="user" name="user">user</option>
                     <option value="admin" name ="admin">admin</option>
         </select><br><br>

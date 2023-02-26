@@ -44,7 +44,7 @@
   }
   .header .logo {
     font-size: 4rem;
-    margin: 0;
+    margin-right: 100px;
     letter-spacing: 2px;
     font-family: 'Courier New', Courier, monospace;
   }
@@ -94,10 +94,7 @@
     display: none;
   }
   
-  /* 
-
-  Responsive Codes
-  */
+  /* Responsive Codes*/
   @media (max-width: 1024px) {
     .navbar-list {
       gap: 1rem;
@@ -248,11 +245,11 @@
 	width: 90%;
 	max-width: 500px;
 	margin: 10px auto;
-  margin-left: 60%;
-  margin-top: 10%;
+  margin-left: 58%;
+  margin-top: 15%;
 	position: relative; 
 	overflow-x: hidden;
-  margin-bottom: -480px;
+  margin-bottom: -460px;
 }
 
 .slider-container .arrow {

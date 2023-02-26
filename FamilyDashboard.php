@@ -4,16 +4,16 @@
   <title>Dashboard</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dashboardsStyle/userDashboard.css">
+  <link rel="stylesheet" href="userDashboard.css">
 </head>
 <body>
   <nav class="navbar">
     <a class="navbar-brand" href="dashboard.php">Dashboard</a>
   </nav>
   <div class="container">
-    <h1>Users</h1>
+    <h1>Family Packages</h1>
     
-     <a href="FamilyAdd.php">  <button type="submit" name="submit" id="userAdd">Add Donation</button><br> <br> </a> 
+     <a href="FamilyAdd.php">  <button type="submit" name="submit" id="userAdd">Add Book</button><br> <br> </a> 
     
     <table>
       <thead>
@@ -31,9 +31,9 @@
       <tbody>
       <?php
  
-        include 'configPackagesFamilyl.php';
-        $money = new DatabasePackagesFamily();
-        $rows = $money->fetch();
+        include 'configPackagesFamily.php';
+        $book = new DatabasePackagesFamily();
+        $rows = $book->fetch();
       
         if(!empty($rows)){
         foreach($rows as $row){ 
@@ -46,7 +46,7 @@
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['phoneNumber']; ?></td>
                 <td><?php echo $row['address']; ?></td>
-                <td><?php echo $row['money']; ?></td>
+                <td><?php echo $row['book']; ?></td>
                 <td>
                   <a href="FamilyDelete.php?id=<?php echo $row['id']; ?>" class="btn btn1">Delete</a>
                   <a href="FamilyEdit.php?id=<?php echo $row['id']; ?>" class="btn btn2">Edit</a>

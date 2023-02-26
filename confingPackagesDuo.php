@@ -3,7 +3,7 @@ class DatabasePackagesDuo{
     private $server = 'localhost';
     private $username = 'root';
     private $password;
-    private $database = 'ofertat';
+    private $database = 'bali';
     private $conn;
 
     public function __construct(){
@@ -23,13 +23,13 @@ public function insert(){
         $email = $_POST['email']; 
         $number = $_POST['number'];
         $adress = $_POST['adress'];
-        $money = $_POST['money'];
+        $book = $_POST['book'];
        
 
-        $query = "INSERT INTO donate_money(name, surname, email, phoneNumber, address, money) VALUES ('$name', '$surname','$email', '$number', '$adress', '$money')";
+        $query = "INSERT INTO packages_duo(name, surname, email, phoneNumber, address, book) VALUES ('$name', '$surname','$email', '$number', '$adress', '$book')";
         if ($sql = $this->conn->query($query)) {
 
-            echo "<script>alert('Thank you for your donation. God bless you!!');</script>";
+            echo "<script>alert('Thank you for your booking.');</script>";
             echo "<script>window.location.href = 'Homepage.php';</script>";
         }
 
@@ -58,7 +58,7 @@ public function check(){
      
            if($row['email'] == $email){
             
-            echo "<script>alert('Thank you for your donation. God bless you!!');</script>";
+            echo "<script>alert('Thank you for your booking.');</script>";
             echo "<script>window.location.href = 'Homepage.php';</script>";
             $this->insert();
            }
@@ -90,7 +90,7 @@ public function check(){
      
            if($row['email'] == $email){
             
-            echo "<script>alert('Thank you for your donation. God bless you!!');</script>";
+            echo "<script>alert('Thank you for your booking.');</script>";
             echo "<script>window.location.href = 'DuoDashboard.php';</script>";
             $this->insert();
            }
@@ -98,7 +98,7 @@ public function check(){
         }
         else{
             echo "<script>alert('The email is invalid. Go register first please!');</script>";
-            echo "<script>window.location.href = 'userDashboard.php';</script>";
+            echo "<script>window.location.href = 'UserDashboard.php';</script>";
         }
      
      };
@@ -106,7 +106,7 @@ public function check(){
 
  public function fetch(){
     $data = null;
-    $query = "SELECT * FROM donate_money";
+    $query = "SELECT * FROM packages_duo";
     if ($sql = $this->conn->query($query)) {
         while ($row = mysqli_fetch_assoc($sql)) {
             $data[] = $row;
@@ -119,7 +119,7 @@ public function check(){
 
 public function delete($id){
 
-    $query = "DELETE FROM donate_money where id = '$id'";
+    $query = "DELETE FROM packages_duo where id = '$id'";
     if ($sql = $this->conn->query($query)) {
         return true;
     }else{
@@ -131,7 +131,7 @@ public function edit($id){
 
     $data = null;
 
-    $query = "SELECT * FROM donate_money WHERE id = '$id'";
+    $query = "SELECT * FROM packages_duo WHERE id = '$id'";
     if ($sql = $this->conn->query($query)) {
         while($row = $sql->fetch_assoc()){
             $data = $row;
@@ -142,7 +142,7 @@ public function edit($id){
 
 public function update($data){
     
-    $query = "UPDATE donate_money SET name='$data[name]', surname='$data[surname]', email='$data[email]', phoneNumber='$data[number]', address='$data[address]', money='$data[money]'  WHERE id='$data[id] '";
+    $query = "UPDATE packages_duo SET name='$data[name]', surname='$data[surname]', email='$data[email]', phoneNumber='$data[number]', address='$data[address]', book='$data[book]'  WHERE id='$data[id] '";
 
     if ($sql = $this->conn->query($query)) {
         return true;

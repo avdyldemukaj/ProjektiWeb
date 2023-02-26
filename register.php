@@ -10,39 +10,40 @@
 <body>
     
 
-    <main>
+<main>
         
-            
         <div class="formStyle">
-            <?php
+
+        <?php
             include 'configRegister.php';
             $registeri = new DatabaseRegister();
             $insert = $registeri->insert();
 
             ?>
             <p id="registerForm">Register</p>
-            <form action="./LoginForm.html" name="myForm" onsubmit="return validateFormRegister()" >               
+            <form action="" onsubmit="return validateFormRegister()" name="myForm"  method="post">
             <label for="name" class="arrangeLabel" id="pak1">Name: </label><br>
-            <input type="text" placeholder="Enter name..." name="name" class="input1"><br>
+            <input type="text" placeholder="Enter name..." name="name"><br>
             <span class="error" id="errorname"></span><br>
 
             <label for="surname" class="arrangeLabel" id="pak2">Surname: </label><br>
-            <input type="text" placeholder="Enter surname..." name="surname" class="input1"><br>
+            <input type="text" placeholder="Enter surname..." name="surname"><br>
             <span class="error" id="errorsurname"></span><br>
             
             <label for="email" class="arrangeLabel" id="pak3">Email: </label><br>
-            <input type="email" placeholder="Enter email..." name="email" class="input1"><br>
+            <input type="email" placeholder="Enter email..." name="email"><br>
             <span class="error" id="erroremail"></span><br>
 
             <label for="password" class="arrangeLabel" id="pak4">Password: </label><br>
-            <input type="password" placeholder="Enter password..." name="password" class="input1"><br> 
-            <span class="error" id="errorpassword"></span><br>
+            <input type="password" placeholder="Enter password..." name="password"><br> 
+            <span class="error" id="errorpassword"></span><br> 
+                        
             
-            <input type="submit" value="Register" id="dnButt"><br>
+            <input type="submit" name ="submit" value="Register" id="dnButt"><br>
             
             </form>
         </div>
-
+        
     </main>
 
 
