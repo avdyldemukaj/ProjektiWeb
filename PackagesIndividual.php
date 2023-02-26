@@ -12,10 +12,10 @@
 <body>
 
 <header class="header">
-      <h3 class="logo">IndividualPackages<span></span></h3>
+      <h3 class="logo">Individual<span></span></h3>
       <nav class="navbar">
         <ul class="navbar-list">
-          <li><a class="navbar-link" href="#hero">home</a></li>
+          <li><a class="navbar-link" href="Homepage.php">home</a></li>
           <li><a class="navbar-link" href="AboutUs.php">about us</a></li>
           <li><a class="navbar-link" href="contact.php">promotion</a></li>
           <li><a class="navbar-link" href="Packages.php">packages</a></li>
@@ -165,7 +165,7 @@
     <div class="left-side">
         <?php
             include 'confingPackagesIndividual.php';
-            $book = new DatabasePackagesIndividualy();
+            $book = new DatabasePackagesIndividual();
             $check = $book->check();
         ?> 
         <form name="myForm" onsubmit="return validatePackagesIndividual()" method="post">
@@ -247,3 +247,5 @@
 </body>
 
 </html>
+
+

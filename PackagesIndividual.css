@@ -45,7 +45,7 @@ body {
 }
 .header .logo {
   font-size: 4rem;
-  margin-right: 100px;
+  margin: 0;
   letter-spacing: 2px;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -95,10 +95,7 @@ body {
   display: none;
 }
 
-/* 
 
-Responsive Codes
-*/
 @media (max-width: 1024px) {
   .navbar-list {
     gap: 1rem;
@@ -108,7 +105,6 @@ Responsive Codes
     font-size: 1.7rem;
   }
 }
-/* 980px */
 @media (max-width: 980px) {
   .header {
     padding: 0 10rem;
@@ -159,65 +155,92 @@ Responsive Codes
   background-color:white ;
   padding: 30px;
   opacity: 0.6;
-  /* padding: 100px; */
-  /* background-image: url(./individuali.webp);
-  background-attachment:fixed;
-  background-size: cover;
-  background-repeat: no-repeat; */
+  
 }
 .div h2{
     text-align: center;
     font-size: 30px;
 }
+.text{
+  margin-top: 30px;
+}
+.text #trip{
+  padding-top: 80px;
+ padding-left: 50px;
+  font-size: 25px;
+  padding-bottom: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.text #paro{
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #1a8a77;
+  padding: 15px;
+}
+
 .row {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.col{
-
-display: flex;
-justify-content: center;
-align-items: center;
-justify-content: space-evenly;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-figure{
+.col {
+  width: 100%;
+  max-width: 310px;
+  margin: 20px;
+}
+
+figure {
   margin: 0;
   border: 1pt solid #A8A8A8;
   background-color: #EDEDDD;
   padding: 5px;
-  width: 310px;
-
-
 }
 
-figcaption{
+figcaption {
   background-color: #EDEDDD;
-  padding: 5px;
+  padding: 15px;
   font-size: 15px;
-
 }
-span{
+
+span {
   color: blue;
   font-weight: 900;
   font-size: 20px;
 }
-figcaption button{
+
+figcaption button {
   padding: 10px;
   float: right;
-  background-color: #1a8a77 ;
+  background-color: #1a8a77;
   color: #e7f5ff;
   border: transparent;
 }
-figcaption button:hover{
-   background-color: #168aad;
-    box-shadow: 0px 15px 20px #64dfdf;
-    color: #fff;
-    transform: translateY(-7px);
+
+figcaption button:hover {
+  background-color: #168aad;
+  box-shadow: 0px 15px 20px #64dfdf;
+  color: #fff;
+  transform: translateY(-7px);
 }
+
+@media screen and (min-width: 768px) {
+  .col {
+    width: calc(33.33% - 40px);
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .col {
+    width: calc(25% - 40px);
+    margin: 20px;
+  }
+}
+
 .main-text{
 text-align: center;
   font-size: 25px;
@@ -298,61 +321,61 @@ text-align: center;
 .right-side img{
   border-radius: 50px;
 }
-  .footer{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    background-color: #1a8a77;
-    flex-wrap: wrap;
-    font-weight: bold;
-    opacity: 70%;
-    
-  }
+.footer{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  background-color: #1a8a77;
+  flex-wrap: wrap;
+  font-weight: bold;
+  opacity: 70%;
   
-  .footer1{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    margin-left: 70px;
-    margin-bottom: 5%;
-    padding-top: 5%;
-  }
+}
 
-  .footer1 > h4{
-    font-size: 30px;
-    
-   
-  }
+.footer1{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 70px;
+  margin-bottom: 5%;
+  padding-top: 5%;
+}
+
+.footer1 > h4{
+  font-size: 30px;
   
-  .p{
+ 
+}
+
+.pg{
+
+  font-size: 18px;
   
-    font-size: 18px;
-    
-  }
-  .footer2{
-    display: flex;
-    
-    flex-direction: column;
-    color: white;
-    margin-left: 1000px;
-    margin-top: -155px;
-  }
-  .footer2 > h4{
-    font-size: 27px;
-   
-  }
+}
+.footer2{
+  display: flex;
   
-  .ul1 {
-    font-size: 17px;
-    margin-left: 30px;
-  }
-  
-  #UL1 {
-  
-    margin-left: 20px;
-      padding: 0;
-      color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: justify;
-  }
+  flex-direction: column;
+  color: white;
+  margin-left: 1000px;
+  margin-top: -155px;
+}
+.footer2 > h4{
+  font-size: 27px;
+ 
+}
+
+.ul1 {
+  font-size: 17px;
+  margin-left: 30px;
+}
+
+#UL1 {
+
+  margin-left: 20px;
+    padding: 0;
+    color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: justify;
+}

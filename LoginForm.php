@@ -7,7 +7,7 @@
   </head>
   <body>
     
-    <form action="" class="form">
+    <div action="" class="form">
       <span></span>
       <span></span>
       <span></span>
@@ -22,18 +22,19 @@
                 $check = $logini->check();
                
             ?> 
-              <form action="" name="myForm"  method="post" onsubmit="return login()">
-              <input type="email" id="emaili" placeholder="User Name">
-              <input type="password" id="passi" placeholder="Password">
-              <!-- <button type="submit" onclick="login()" class="brn" href="Homepage.php">LOGIN</button> -->
+            <!-- onsubmit="return login()" -->
+            <form action="" name="myForm"  method="post" >
+              <input type="email" id="emaili" placeholder="User Name" name="email">
+              <input type="password" id="passi" placeholder="Password" name="password">
               <input type="submit" name="submit" value="Login" id="dnButt"><br>
               <div class="chicken">
              <a href="">Forgot Password?</a> &ensp;
              <a href="register.php">Sign Up</a>
+            </form>
             </div>
           </div>
       </div>
-    </form>
+</div>
       
       <script src="LoginForm.js"></script>
   

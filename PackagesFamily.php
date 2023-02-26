@@ -12,7 +12,7 @@
 <body>
 
 <header class="header">
-      <h3 class="logo">FamilyPackages<span></span></h3>
+      <h3 class="logo">Family<span></span></h3>
       <nav class="navbar">
         <ul class="navbar-list">
           <li><a class="navbar-link" href="#hero">home</a></li>
