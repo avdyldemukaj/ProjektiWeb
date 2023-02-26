@@ -41,7 +41,7 @@
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['message']; ?></td>
-                <td><img src="../promote/<?php echo $row['image']; ?>" width="300px" height="200px"></td>
+                <td><img src="./promote/<?php echo $row['image']; ?>" width="300px" height="200px"></td>
                 <td>
                   <a href="contactDelete.php?id=<?php echo $row['id']; ?>" class="btn btn1">Delete</a>
                   <a href="contactEdit.php?id=<?php echo $row['id']; ?>" class="btn btn2">Edit</a>
