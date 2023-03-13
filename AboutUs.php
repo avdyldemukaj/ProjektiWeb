@@ -19,7 +19,7 @@
 </head>
 <body>
     <header class="header">
-        <h3 class="logo">AboutUs<span></span></h3> 
+        <h3 class="logo">About Us<span></span></h3> 
         <nav class="navbar">
          
           <ul class="navbar-list">

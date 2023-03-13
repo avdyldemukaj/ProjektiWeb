@@ -28,7 +28,7 @@ public function insert(){
         $query = "INSERT INTO contact(name, email, message,image) VALUES ('$name', '$email', '$message','$image')";
         if ($sql = $this->conn->query($query)) {
 
-            echo "<script>alert('Thank you for contacting us. We will inform you ASAP!');</script>";
+            echo "<script>alert('Thank you for your promotion. We will inform you ASAP!');</script>";
             echo "<script>window.location.href = 'Homepage.php';</script>";
         }
 
