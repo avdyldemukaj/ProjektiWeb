@@ -11,7 +11,7 @@
     <a class="navbar-brand" href="dashboard.php">Dashboard</a>
   </nav>
   <div class="container">
-    <h1>Users</h1>
+    <h1>Promotion</h1>
     
     
     <table>
