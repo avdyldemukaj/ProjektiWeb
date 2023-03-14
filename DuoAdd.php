@@ -13,7 +13,7 @@
   <div class="container">
     <h1>Duo</h1>
         <?php
-            include 'configPackagesDuo.php';
+            include 'confingPackagesDuo.php';
             $book = new DatabasePackagesDuo();
             $insert = $book->check2();
 
