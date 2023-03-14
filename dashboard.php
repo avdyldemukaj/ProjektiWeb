@@ -35,8 +35,8 @@
 			<a href="FamilyDashboard.php">View Family Packages</a>
 		</div>
 		<div class="card">
-			<h2>Contact Us</h2>
-			<p>Contact</p>
+			<h2>Promotion</h2>
+			<p>Promotion</p>
 			<a href="contactDashboard.php">View Contact</a>
 		</div>
 	</div>
