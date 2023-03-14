@@ -24,7 +24,7 @@
           <th>Email</th>
           <th>Phone Number</th>
           <th>Address</th>
-          <th>Money(€)</th>
+          <th>Book</th>
           <th>Action</th>
         </tr>
       </thead>

@@ -44,7 +44,7 @@ body {
   height: 9rem;
 }
 .header .logo {
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin-right: 20px;
   letter-spacing: 2px;
   font-family: 'Courier New', Courier, monospace;
@@ -68,7 +68,7 @@ body {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #212529;
   transition: all 0.3s;
 }
