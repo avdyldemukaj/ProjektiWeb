@@ -51,7 +51,7 @@
       <input type="text" id="name" value="<?php echo $row['message']; ?>" name="message" required>
     
 
-      <button type="submit" name="update">Edit Contact</button>
+      <button type="submit" name="update">Edit Promote</button>
     </form>
     
   </div>
