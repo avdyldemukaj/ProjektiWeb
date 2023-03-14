@@ -1,6 +1,6 @@
 <?php 
     include 'configContact.php';
-    $contact = new DatabaseDonateContact();
+    $contact = new DatabasePromote();
     $id = $_REQUEST['id'];
     $delete = $contact->delete($id);
  

@@ -37,7 +37,7 @@
 
         <?php
             include 'configContact.php';
-            $contactForm = new DatabaseDonateContact();
+            $contactForm = new DatabasePromote();
             $check = $contactForm->check();
         
         ?>

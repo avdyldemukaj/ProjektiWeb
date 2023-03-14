@@ -1,5 +1,5 @@
 <?php
-class DatabaseDonateContact{
+class DatabasePromote{
     private $server = 'localhost';
     private $username = 'root';
     private $password;

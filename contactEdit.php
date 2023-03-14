@@ -14,7 +14,7 @@
     <h1>Users</h1>
     <?php
               include 'configContact.php';
-              $contact = new DatabaseDonateContact();
+              $contact = new DatabasePromote();
               $id = $_REQUEST['id'];
               $row = $contact->edit($id);
  

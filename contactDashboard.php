@@ -29,7 +29,7 @@
       <?php
  
         include 'configContact.php';
-        $contact = new DatabaseDonateContact();
+        $contact = new DatabasePromote();
         $rows = $contact->fetch();
         
         if(!empty($rows)){
